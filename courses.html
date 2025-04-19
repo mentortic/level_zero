@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="auto">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursos</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <!-- Tus estilos -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./css/courses.css" />
+    <link rel="stylesheet" href="./css/theme.css" />
+  </head>
+  <body class="d-flex h-100 dark-theme">
+    <!-- 1️⃣ Toggle de tema -->
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme"
+      >
+        <i class="bi theme-icon-active me-2"></i>
+        <span class="visually-hidden">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme"
+      >
+        <li>
+          <button
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <i class="bi bi-sun-fill me-2 opacity-50"></i>Light
+            <i class="bi bi-check2 ms-auto d-none"></i>
+          </button>
+        </li>
+        <li>
+          <button
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="dark"
+            aria-pressed="true"
+          >
+            <i class="bi bi-moon-stars-fill me-2 opacity-50"></i>Dark
+            <i class="bi bi-check2 ms-auto"></i>
+          </button>
+        </li>
+        <li>
+          <button
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="auto"
+            aria-pressed="false"
+          >
+            <i class="bi bi-circle-half me-2 opacity-50"></i>Auto
+            <i class="bi bi-check2 ms-auto d-none"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 2️⃣ Botón hamburguesa (móvil) -->
+    <button
+      class="btn btn-bd-primary position-fixed top-0 start-0 m-3 d-md-none"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#sidebar"
+      aria-controls="sidebar"
+      aria-expanded="false"
+      aria-label="Mostrar menú"
+    >
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- 3️⃣ Layout principal -->
+    <div class="d-flex flex-column flex-md-row w-100 h-100">
+      <!-- 3.1️⃣ Sidebar -->
+      <nav
+        id="sidebar"
+        class="collapse d-md-flex flex-column flex-shrink-0 p-3 bg-body-tertiary"
+      >
+        <a
+          href="#"
+          class="d-flex align-items-center mb-3 logo-container border-bottom text-decoration-none"
+        >
+          <img
+            src="./assets/img/LogoMttVerdeL1.png"
+            alt="Logo light"
+            class="logo logo-light"
+          />
+          <img
+            src="./assets/img/LogoMttMoradoL1.png"
+            alt="Logo dark"
+            class="logo logo-dark"
+          />
+        </a>
+        <ul id="sidebar-list" class="list-unstyled ps-0">
+          <!-- JS rellenará aquí -->
+        </ul>
+      </nav>
+
+      <!-- 3.2️⃣ Contenido: formulario + vídeo -->
+      <main class="flex-grow-1 d-flex flex-column overflow-hidden">
+        <!-- 4️⃣ Formulario -->
+        <section id="form-container" class="form-box py-5">
+          <h2 class="section-title mb-4">
+            Registra tus datos para activar el contenido del curso
+          </h2>
+          <form
+            id="info-form"
+            action="https://docs.google.com/forms/d/e/1FAIpQLSeG63-VL1pinNgvPPiDGkimQyxOopIUg3qKgpVcw-OKCJod7w/formResponse"
+            method="POST"
+            target="hidden_iframe"
+            class="px-3"
+          >
+            <div class="mb-3 text-start">
+              <label for="name" class="form-label">Nombre completo</label>
+              <input
+                type="text"
+                id="name"
+                name="entry.43542327"
+                class="form-control"
+                placeholder="Ingresa tu nombre completo"
+                required
+              />
+            </div>
+            <div class="mb-3 text-start">
+              <label for="email" class="form-label">Correo electrónico</label>
+              <input
+                type="email"
+                id="email"
+                name="entry.316879228"
+                class="form-control"
+                placeholder="Ingresa tu correo"
+                required
+              />
+            </div>
+            <div class="mb-4 text-start">
+              <label for="phone" class="form-label">Celular</label>
+              <input
+                type="tel"
+                id="phone"
+                name="entry.616092957"
+                class="form-control"
+                placeholder="Ingresa tu número"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+          <iframe
+            name="hidden_iframe"
+            id="hidden_iframe"
+            style="display: none"
+          ></iframe>
+        </section>
+
+        <!-- 5️⃣ Vídeo + bienvenida + Prev/Next -->
+        <section id="video-container" class="d-none">
+          <!-- 5.1️⃣ Mensaje de bienvenida -->
+          <div id="welcome-message" class="welcome-text px-4">
+            <p class="welcome-primary">Bienvenidos a este curso,</p>
+            <p class="welcome-secondary">
+              para iniciar debes dar click en las categorías de videos a la
+              izquierda de la página.<br />
+              ¡Muchos éxitos en tu aprendizaje!
+            </p>
+          </div>
+          <!-- 5.2️⃣ Iframe vídeo -->
+          <div class="video-wrapper">
+            <iframe
+              id="video-frame"
+              src="about:blank"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <!-- 5.3️⃣ Prev/Next -->
+          <div class="d-flex justify-content-center mt-3 controls-container">
+            <button id="prev-btn" class="btn nav-btn me-2">Anterior</button>
+            <button id="next-btn" class="btn nav-btn">Siguiente</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- 6️⃣ Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/theme.js" defer></script>
+    <script src="./js/videos.js" defer></script>
+    <script src="./js/courses.js" defer></script>
+  </body>
+</html>

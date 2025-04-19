@@ -1,0 +1,57 @@
+/* home.css — Layout y componentes generales */
+
+/* 1. Reset y layout base */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  text-align: center;
+}
+
+/* 2. Contenedor principal */
+.cover-container {
+  flex: 1;
+  max-width: 42em;
+  margin: auto;
+  padding: 1rem;
+}
+
+/* 3. Navegación */
+.nav-masthead .nav-link {
+  margin: 0 0.5rem;
+  font-weight: 600;
+  border-bottom: 0.25rem solid transparent;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+/* 4. Logos (visibilidad controlada por theme.css) */
+.logo {
+  display: none;
+  vertical-align: middle;
+}
+
+/* 5. Tipografía principal */
+.display-4 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.lead {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+/* 6. Botones base */
+.btn {
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* 7. Footer */
+footer p {
+  margin: 0.5rem 0;
+}

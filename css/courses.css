@@ -1,0 +1,173 @@
+/* =========================================================================
+   courses.css — Sidebar, theming, layout, vídeo y bienvenida
+   ========================================================================= */
+
+/* Sidebar ancho fijo */
+#sidebar {
+  width: 280px;
+}
+
+/* 1. Fondo del sidebar según tema */
+body.light-theme nav#sidebar {
+  background-color: #ffffff !important;
+}
+body.dark-theme nav#sidebar {
+  background-color: transparent !important;
+}
+
+/* 2. Alinear todo a la izquierda */
+nav#sidebar,
+nav#sidebar .btn-toggle,
+nav#sidebar .btn-toggle-nav {
+  text-align: left !important;
+}
+
+/* 3. “Cuadritos” de categorías */
+/* Light: morado/blanco */
+body.light-theme .btn-toggle {
+  background-color: #621cd5;
+  color: #ffffff;
+}
+body.light-theme .btn-toggle:hover,
+body.light-theme .btn-toggle:focus {
+  background-color: #5200ad;
+}
+/* Dark: verde/negro */
+body.dark-theme .btn-toggle {
+  background-color: #11f7ce;
+  color: #000000;
+}
+body.dark-theme .btn-toggle:hover,
+body.dark-theme .btn-toggle:focus {
+  background-color: #0dd8b2;
+}
+
+/* 4. Ítems de vídeo */
+.btn-toggle-nav {
+  text-align: center;
+}
+.btn-toggle-nav a {
+  display: inline-block;
+  padding: 0.1875rem 0.5rem;
+  margin: 0.125rem 0;
+  text-decoration: none;
+}
+/* Light: texto morado + hover morado/blanco */
+body.light-theme .btn-toggle-nav a {
+  color: #621cd5;
+}
+body.light-theme .btn-toggle-nav a:hover,
+body.light-theme .btn-toggle-nav a:focus {
+  background-color: #621cd5;
+  color: #ffffff;
+}
+/* Dark: texto verde + hover verde/blanco */
+body.dark-theme .btn-toggle-nav a {
+  color: #11f7ce;
+}
+body.dark-theme .btn-toggle-nav a:hover,
+body.dark-theme .btn-toggle-nav a:focus {
+  background-color: #11f7ce;
+  color: #ffffff;
+}
+
+/* 5. Logo dinámico */
+.logo-container .logo {
+  height: 40px;
+  width: auto;
+}
+body.light-theme .logo-light {
+  display: inline-block;
+}
+body.light-theme .logo-dark {
+  display: none;
+}
+body.dark-theme .logo-dark {
+  display: inline-block;
+}
+body.dark-theme .logo-light {
+  display: none;
+}
+
+/* 6. Formulario centrado */
+#form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 7. Vídeo + bienvenida + espacio superior */
+#video-container {
+  flex: 1;
+  display: none; /* sigue oculto hasta enviar form */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 4rem; /* espacio fijo arriba */
+  padding-bottom: 2rem;
+  margin: 0;
+}
+
+/* 7.1. Mensaje de bienvenida */
+.welcome-text {
+  text-align: center;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+/* Colores según tema */
+body.dark-theme .welcome-primary {
+  color: #11f7ce;
+}
+body.light-theme .welcome-primary {
+  color: #621cd5;
+}
+body.dark-theme .welcome-secondary {
+  color: #ffffff;
+}
+body.light-theme .welcome-secondary {
+  color: #000000;
+}
+
+/* 7.2. Iframe vídeo */
+.video-wrapper {
+  width: 75%;
+  aspect-ratio: 16/9;
+}
+@media (max-width: 767.98px) {
+  .video-wrapper {
+    width: 100%;
+  }
+}
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 8. Botones Prev/Next */
+.nav-btn {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+/* Dark: verde/negro + hover morado */
+body.dark-theme .nav-btn {
+  background-color: #11f7ce;
+  color: #000000;
+}
+body.dark-theme .nav-btn:hover {
+  color: #621cd5;
+}
+/* Light: morado/blanco + hover verde */
+body.light-theme .nav-btn {
+  background-color: #621cd5;
+  color: #ffffff;
+}
+body.light-theme .nav-btn:hover {
+  background-color: #11f7ce;
+  color: #ffffff;
+}
+
+/* 9. Botón hamburguesa encima */
+button[data-bs-toggle="collapse"] {
+  z-index: 1001;
+}
