@@ -3,32 +3,32 @@
 /* 1. Reset y layout base */
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   height: 100vh;
   text-align: center;
+  font-family: "Montserrat", sans-serif;
 }
 
-/* 2. Contenedor principal */
+/* 2. Navbar padding (ya en <nav>) */
+.navbar {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+/* 3. Logos: visibilidad controlada por theme.css */
+.logo {
+  display: none;
+}
+
+/* 4. Contenido centrado */
 .cover-container {
   flex: 1;
   max-width: 42em;
+  width: 100%;
   margin: auto;
   padding: 1rem;
-}
-
-/* 3. Navegación */
-.nav-masthead .nav-link {
-  margin: 0 0.5rem;
-  font-weight: 600;
-  border-bottom: 0.25rem solid transparent;
-  transition: color 0.3s, border-color 0.3s;
-}
-
-/* 4. Logos (visibilidad controlada por theme.css) */
-.logo {
-  display: none;
-  vertical-align: middle;
 }
 
 /* 5. Tipografía principal */
@@ -54,4 +54,25 @@ body {
 /* 7. Footer */
 footer p {
   margin: 0.5rem 0;
+}
+
+/* 8. Menu colors (override Bootstrap defaults) */
+/* Dark theme */
+body.dark-theme .nav-link {
+  color: var(--txt-dark-primary) !important;
+}
+body.dark-theme .nav-link:hover,
+body.dark-theme .nav-link.active {
+  color: var(--txt-dark-secondary) !important;
+  border-bottom: 0.25rem solid var(--txt-dark-secondary) !important;
+}
+
+/* Light theme */
+body.light-theme .nav-link {
+  color: var(--txt-light-primary) !important;
+}
+body.light-theme .nav-link:hover,
+body.light-theme .nav-link.active {
+  color: var(--txt-light-secondary) !important;
+  border-bottom: 0.25rem solid var(--txt-light-secondary) !important;
 }
